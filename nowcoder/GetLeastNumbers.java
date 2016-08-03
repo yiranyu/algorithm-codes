@@ -19,7 +19,7 @@ public class GetLeastNumbers {
 	}
 
 	/**
-	 * 用冒泡排序找到前k个小的数，这种解法会修改输入的数组
+	 * 用选择排序找到前k个小的数，这种解法会修改输入的数组
 	 * 
 	 * @param input
 	 * @param k
@@ -123,17 +123,17 @@ public class GetLeastNumbers {
 	}
 
 	/**
-	 * 冒泡排序
+	 * 选择排序
 	 * 
 	 * @param array
 	 */
-	public static void bubbleSort(int[] array) {
+	public static void selectSort(int[] array) {
 		if (array == null || array.length <= 0) {
 			return;
 		}
 		int len = array.length;
 		int item, index;
-		for (int i = 0; i < len - 1; i++) { // 最后一次不需要
+		for (int i = 0; i < len - 1; i++) {
 			item = array[len - 1];
 			index = len - 1;
 			for (int j = len - 2; j >= i; j--) { // 从后边往前面找最小的一个数

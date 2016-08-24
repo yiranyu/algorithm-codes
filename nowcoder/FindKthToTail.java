@@ -1,12 +1,5 @@
 package nowcoder;
-/**
- *  问题：输入一个链表，输出该链表中倒数第k个结点。
-	要点：链表。
-	思路：分配两个指针，一个指针先遍历到第k个节点，然后第二个指针开始遍历；当第一个指针到尾时，第二个指针刚好到倒数第k个结点。
 
- * @author Administrator
- *
- */
 public class FindKthToTail {
 	public static void main(String[] args) {
 		ListNode node1=new ListNode(1);
@@ -21,6 +14,12 @@ public class FindKthToTail {
 		
 		System.out.println(findKthToTail(node1,2).val);
 	}
+	/**
+	 *  问题：输入一个链表，输出该链表中倒数第k个结点。
+		要点：链表。
+		思路：分配两个指针，一个指针先遍历到第k个节点，然后第二个指针开始遍历；当第一个指针到尾时，第二个指针刚好到倒数第k个结点。
+	 *
+	 */
     public static ListNode findKthToTail(ListNode head,int k) {
     	if(head==null){
     		return null;

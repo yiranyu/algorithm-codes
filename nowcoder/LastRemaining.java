@@ -2,7 +2,7 @@ package nowcoder;
 
 public class LastRemaining {
 	public static void main(String[] args) {
-		System.out.println(lastRemaining(5, 3));
+		System.out.println(lastRemaining2(5, 3));
 	}
 
 	/**
@@ -33,5 +33,21 @@ public class LastRemaining {
 			}
 		}
 		return i;
+	}
+
+	// 分析每次被删除的数字的规律并直接算出结果，时间效率O(n)，空间复杂度(1)
+	// 递推公式n=1时，f(n,m)=0;n>1时，f(n,m)=[f(n-1,m)+m]%n;
+	public static int lastRemaining2(int n, int m) {
+		if (n <= 0 || m <= 0) {
+			return -1;
+		}
+		if (n == 1) { // 序列中只有一个数字
+			return 0;
+		}
+		int last = 0;
+		for (int i = 2; i <= n; i++) {
+			last = (last + m) % i;
+		}
+		return last;
 	}
 }
